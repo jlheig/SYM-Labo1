@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -71,12 +72,32 @@ class MainActivity : AppCompatActivity() {
                     email.error = getString(R.string.main_mandatory_field)
                 if(passwordInput.isNullOrEmpty())
                     password.error = getString(R.string.main_mandatory_field)
+
+
+
+
+
+
                 // Pour les fonctions lambda, on doit préciser à quelle fonction l'appel à return
                 // doit être appliqué
                 return@setOnClickListener
             }
 
             //TODO à compléter...
+
+            //Etape 3.1
+            if(!emailInput!!.contains('@')) {
+                val errorMessage = "L'email n'est pas au bon format!"
+                val duration = Toast.LENGTH_SHORT
+                val toast = Toast.makeText(applicationContext, errorMessage, duration)
+                toast.show()
+            }
+
+
+
+
+
+
         }
     }
 
