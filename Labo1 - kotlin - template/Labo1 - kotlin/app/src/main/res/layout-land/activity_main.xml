@@ -12,23 +12,28 @@
 
     <ImageView
         android:id="@+id/main_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:tint="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="238dp"
+        android:layout_height="192dp"
+        android:contentDescription="@string/main_icon_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+        app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        android:contentDescription="@string/main_icon_desc" />
+        app:tint="@color/colorPrimaryDark" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="367dp"
+        android:layout_height="198dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392">
 
         <TextView
             android:id="@+id/main_email_title"
@@ -41,7 +46,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_email_title"
-            android:inputType="textEmailAddress"
             android:hint="@string/main_email_hint" />
 
         <TextView
@@ -57,7 +61,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_password_title"
-            android:inputType="textPassword"
             android:hint="@string/main_password_hint" />
 
         <LinearLayout
