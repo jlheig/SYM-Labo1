@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.content.DialogInterface
+import android.content.Intent
+import android.view.View
 import android.widget.Toast
 
 
@@ -111,6 +113,11 @@ class MainActivity : AppCompatActivity() {
             //TODO à compléter...
 
         }
+    }
+
+    fun sendMessage(view : View) {
+        val intent = Intent(this, Register::class.java);
+        startActivity(intent)
     }
 
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java

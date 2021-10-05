@@ -9,4 +9,12 @@
     <string name="main_create_account">New account</string>
     <string name="main_icon_desc">Application\'s logo</string>
 
+    <string name="register_email_hint">New e-mail address</string>
+    <string name="register_password_hint">New password</string>
+    <string name="register_mandatory_field">Required field cannot be left blank</string>
+    <string name="register_validate_btn">Validate</string>
+    <string name="register_icon_desc">Application\'s logo</string>
+
+
+
 </resources>
