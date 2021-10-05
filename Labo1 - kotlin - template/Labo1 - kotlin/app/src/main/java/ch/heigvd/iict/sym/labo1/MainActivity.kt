@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.content.DialogInterface
+import android.content.Intent
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.widget.Toast
 
 
@@ -93,6 +95,10 @@ class MainActivity : AppCompatActivity() {
             //Etape 4.1
             else if(credentialsInput.equals(credentials[0]) || credentialsInput.equals(credentials[1])) {
                 //TODO lancer nouvelle activité
+                val intent = Intent(this, ProfileActivity::class.java).apply {
+                    putExtra(EXTRA_MESSAGE, emailInput)
+                }
+                startActivity(intent)
             }
             //Etape 3.2
             else {
