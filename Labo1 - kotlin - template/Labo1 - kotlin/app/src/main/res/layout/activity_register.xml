@@ -31,39 +31,39 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/main_email_title"
+            android:id="@+id/register_email_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/register_email_hint" />
 
         <EditText
-            android:id="@+id/main_email"
+            android:id="@+id/register_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/main_email_title"
+            android:layout_below="@id/register_email_title"
             android:inputType="textEmailAddress"
             android:hint="@string/register_email_hint" />
 
         <TextView
-            android:id="@+id/main_password_title"
+            android:id="@+id/register_password_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/main_email"
+            android:layout_below="@id/register_email"
             android:layout_marginTop="@dimen/app_vertical_separation"
             android:text="@string/register_password_hint" />
 
         <EditText
-            android:id="@+id/main_password"
+            android:id="@+id/register_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/main_password_title"
+            android:layout_below="@id/register_password_title"
             android:inputType="textPassword"
             android:hint="@string/register_password_hint" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/main_password"
+            android:layout_below="@id/register_password"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/app_vertical_separation"
             android:orientation="horizontal">
@@ -73,7 +73,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/app_horizontal_separation"
-                android:text="@string/register_validate_btn" />
+                android:text="@string/register_validate_btn"
+                android:onClick="saveNewUser"/>
 
         </LinearLayout>
 
