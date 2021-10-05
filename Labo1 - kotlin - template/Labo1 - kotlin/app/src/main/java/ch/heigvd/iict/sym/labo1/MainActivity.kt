@@ -1,11 +1,14 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.content.DialogInterface
 import android.widget.Toast
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             password.error = null
         }
 
-        validateButton.setOnClickListener {
+        validateButton.setOnClickListener { it ->
             //on réinitialise les messages d'erreur
             email.error = null
             password.error = null
@@ -83,6 +86,23 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val credentialsInput = Pair(emailInput,passwordInput)
+
+            if(credentialsInput.equals(credentials[0]) || credentialsInput.equals(credentials[1])) {
+                //TODO lancer nouvelle activité
+            }
+            else {
+                val builder1: AlertDialog.Builder = AlertDialog.Builder(this)
+                builder1.setMessage("The credentials entered are not valid")
+                builder1.setCancelable(true)
+
+                builder1.setPositiveButton(
+                    "Ok",
+                    DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
+
+                val alert11: AlertDialog = builder1.create()
+                alert11.show()
+            }
             //TODO à compléter...
 
             //Etape 3.1
