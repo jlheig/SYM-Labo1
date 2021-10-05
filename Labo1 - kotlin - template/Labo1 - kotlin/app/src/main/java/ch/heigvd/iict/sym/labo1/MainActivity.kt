@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity() {
             //on récupère le contenu de deux champs dans des variables de type String
             val emailInput = email.text?.toString()
             val passwordInput = password.text?.toString()
+            val credentialsInput = Pair(emailInput,passwordInput)
 
             if(emailInput.isNullOrEmpty() or passwordInput.isNullOrEmpty()) {
                 // on affiche un message dans les logs de l'application
@@ -78,19 +79,22 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
                 // Pour les fonctions lambda, on doit préciser à quelle fonction l'appel à return
                 // doit être appliqué
                 return@setOnClickListener
             }
-
-            val credentialsInput = Pair(emailInput,passwordInput)
-
-            if(credentialsInput.equals(credentials[0]) || credentialsInput.equals(credentials[1])) {
+            //Etape 3.1
+            else if(!emailInput!!.contains('@')) {
+                val errorMessage = "L'email n'est pas au bon format!"
+                val duration = Toast.LENGTH_SHORT
+                val toast = Toast.makeText(applicationContext, errorMessage, duration)
+                toast.show()
+            }
+            //Etape 4.1
+            else if(credentialsInput.equals(credentials[0]) || credentialsInput.equals(credentials[1])) {
                 //TODO lancer nouvelle activité
             }
+            //Etape 3.2
             else {
                 val builder1: AlertDialog.Builder = AlertDialog.Builder(this)
                 builder1.setMessage("The credentials entered are not valid")
@@ -103,20 +107,8 @@ class MainActivity : AppCompatActivity() {
                 val alert11: AlertDialog = builder1.create()
                 alert11.show()
             }
+
             //TODO à compléter...
-
-            //Etape 3.1
-            if(!emailInput!!.contains('@')) {
-                val errorMessage = "L'email n'est pas au bon format!"
-                val duration = Toast.LENGTH_SHORT
-                val toast = Toast.makeText(applicationContext, errorMessage, duration)
-                toast.show()
-            }
-
-
-
-
-
 
         }
     }
