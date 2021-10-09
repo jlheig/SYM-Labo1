@@ -9,4 +9,10 @@
     <string name="main_create_account">Nouveau compte</string>
     <string name="main_icon_desc">Logo de l\'application</string>
 
+    <string name="register_email_hint">Nouvelle adresse email</string>
+    <string name="register_password_hint">Nouveau mot de passe</string>
+    <string name="register_mandatory_field">Les champs requis ne peuvent pas être vide</string>
+    <string name="register_validate_btn">Valider</string>
+    <string name="register_icon_desc">Logo de l\'application</string>
+
 </resources>

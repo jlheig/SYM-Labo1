@@ -1,5 +1,6 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.app.Activity
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +10,14 @@ import android.widget.EditText
 import android.content.DialogInterface
 import android.content.Intent
 import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.net.Uri
+import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
+import java.net.URI
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     // ceci est fait juste pour simplifier ce premier laboratoire,
     // mais il est évident que de hardcoder ceux-ci est une pratique à éviter à tout prix...
     // /!\ listOf() retourne une List<T> qui est immuable
-    private val credentials = listOf(
+    private var credentials = listOf(
                                 Pair("user1@heig-vd.ch","1234"),
                                 Pair("user2@heig-vd.ch","abcd")
                             )
@@ -93,7 +101,7 @@ class MainActivity : AppCompatActivity() {
                 toast.show()
             }
             //Etape 4.1
-            else if(credentialsInput.equals(credentials[0]) || credentialsInput.equals(credentials[1])) {
+            else if(credentials.contains(credentialsInput)) {
                 //TODO lancer nouvelle activité
                 val intent = Intent(this, ProfileActivity::class.java).apply {
                     putExtra(EXTRA_MESSAGE, emailInput)
@@ -117,6 +125,24 @@ class MainActivity : AppCompatActivity() {
             //TODO à compléter...
 
         }
+    }
+
+    val getContent = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+    {
+            result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val email = result.data?.getStringExtra("newEmail");
+            val password = result.data?.getStringExtra("newPassword").toString();
+
+            if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
+                credentials = credentials + Pair(email, password);
+            }
+        }
+    }
+
+    fun sendMessage(view : View) {
+        val intent = Intent(this, Register::class.java);
+        getContent.launch(intent);
     }
 
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java
