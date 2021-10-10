@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import ch.heigvd.iict.sym.labo1.utils.Utils
 
 class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +17,8 @@ class Register : AppCompatActivity() {
 
     fun saveNewUser(view : View){
         val userEmail = findViewById<EditText>(R.id.register_email).text?.toString();
-        if(!userEmail!!.contains('@')) {
-            val errorMessage = "L'email n'est pas au bon format!"
-            val duration = Toast.LENGTH_SHORT
-            val toast = Toast.makeText(applicationContext, errorMessage, duration)
-            toast.show()
+        if(!Utils.checkEmailFormat(userEmail)) {
+            Utils.sendEmailError(applicationContext)
             return
         }
         val userPassword = findViewById<EditText>(R.id.register_password).text?.toString();

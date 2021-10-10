@@ -15,6 +15,6 @@
     <string name="register_validate_btn">Validate</string>
     <string name="register_icon_desc">Application\'s logo</string>
 
-
+    <string name="email_format_error">The email is not at the good format</string>
 
 </resources>
