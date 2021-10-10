@@ -17,6 +17,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
+import ch.heigvd.iict.sym.labo1.utils.Utils
 import java.net.URI
 
 
@@ -94,11 +95,8 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             //Etape 3.1
-            else if(!emailInput!!.contains('@')) {
-                val errorMessage = "L'email n'est pas au bon format!"
-                val duration = Toast.LENGTH_SHORT
-                val toast = Toast.makeText(applicationContext, errorMessage, duration)
-                toast.show()
+            else if(!Utils.checkEmailFormat(emailInput)/*!emailInput!!.contains('@')*/) {
+                Utils.sendEmailError(applicationContext);
             }
             //Etape 4.1
             else if(credentials.contains(credentialsInput)) {
