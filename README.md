@@ -22,6 +22,8 @@ Si un @ n'est pas présent dans l'email, un toast est construit et affiché
 
 ## 3.2
 
+Au travers de plusieurs conditions on vérifie si les crédentials utilisés sont valides ou non. Si la paire "Login/Password" n'existe pas dans la liste des crédentials valides, alors on refuse la connexion et on affiche un message d'erreur. Si la paire est valide, alors on lance une nouvelle activité (voir partie 4).
+
 # Partie 4
 
 ## 4.1
