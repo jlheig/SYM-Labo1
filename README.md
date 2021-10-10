@@ -1,5 +1,5 @@
 # SYM-Labo1
-
+Fait par Jean-Luc Blanc, Kylian Bourcoud & Paul Reeve
 # Partie 2
 
 ## 2.1
