@@ -75,7 +75,11 @@ comme de photos pa exemple
 
 Une classe _Utils_ a été créé et contient une fonction de vérification du format de l'email
 ainsi que de l'affichage du toast d'erreur. Ces deux fonctions peuvent donc être utilisé
-dans l'activité Main et l'activité Register
+dans l'activité Main et l'activité Register.
+
+Concernant le refactor des layout, on peut créer un élément dans un layout avec un id ce qui nous permettrait 
+après dans le code de l'activité de construire sa vue en spécifiant l'Id de l'élément du layout à mettre dans la vue de l'activité.
+Ainsi plusieurs vues pourrait utiliser un même élément du layout.
 
 ## 5.4
 
