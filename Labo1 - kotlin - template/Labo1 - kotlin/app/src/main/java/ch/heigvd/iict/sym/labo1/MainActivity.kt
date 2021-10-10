@@ -20,7 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import java.net.URI
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : GenericActivity() {
 
     // on définit une liste de couples e-mail / mot de passe
     // ceci est fait juste pour simplifier ce premier laboratoire,
