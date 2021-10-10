@@ -95,12 +95,11 @@ class MainActivity : GenericActivity() {
                 return@setOnClickListener
             }
             //Etape 3.1
-            else if(!Utils.checkEmailFormat(emailInput)/*!emailInput!!.contains('@')*/) {
+            else if(!Utils.checkEmailFormat(emailInput)) {
                 Utils.sendEmailError(applicationContext);
             }
             //Etape 4.1
             else if(credentials.contains(credentialsInput)) {
-                //TODO lancer nouvelle activité
                 val intent = Intent(this, ProfileActivity::class.java).apply {
                     putExtra(EXTRA_MESSAGE, emailInput)
                 }
@@ -120,7 +119,6 @@ class MainActivity : GenericActivity() {
                 alert11.show()
             }
 
-            //TODO à compléter...
 
         }
     }
