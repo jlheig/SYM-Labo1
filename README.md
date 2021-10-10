@@ -11,6 +11,8 @@ champ de saisie (email et password).
 
 ## 2.3
 
+Un layout horizontal a été créé et adapté afin de satisfaire le mode paysage du téléphone.
+
 # Partie 3
 
 ## 3.1
@@ -24,9 +26,15 @@ Si un @ n'est pas présent dans l'email, un toast est construit et affiché
 
 ## 4.1
 
+On créé l'activité "ProfileActivity" qui servira de page de profil lorsque l'utilisateur se connecte convenablement.
+
 ## 4.2
 
+On ajoute une TextView au layout de l'activité afin d'afficher l'adresse email de l'utilisateur lorsque celui-ci se connecte. Il faut donc ajouter un passage de paramètre lors de la création de l'activité, puis récupérer ce paramètre et remplacer le contenu de la TextView.
+
 ## 4.3
+
+On ajoute une ImageView au layout de l'activité afin d'afficher une image de profil lorsque l'utilisateur se connecte. On ajoute ensuite le code fourni afin de télécharger une image de profil pouvant remplacer l'image "placeholder" fournie par l'ImageView de base.
 
 # Partie 5
 
