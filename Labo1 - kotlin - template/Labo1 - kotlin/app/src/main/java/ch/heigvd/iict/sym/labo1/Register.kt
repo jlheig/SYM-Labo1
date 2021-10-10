@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import ch.heigvd.iict.sym.labo1.utils.Utils
 
-class Register : AppCompatActivity() {
+class Register : GenericActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)

@@ -7,7 +7,7 @@ import android.widget.TextView
 import android.widget.ImageView
 import ch.heigvd.iict.sym.labo1.network.ImageDownloader
 
-class ProfileActivity : AppCompatActivity() {
+class ProfileActivity : GenericActivity() {
 
     private lateinit var tvEmail:TextView
     private lateinit var ivProfilePic:ImageView
