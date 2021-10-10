@@ -4,6 +4,13 @@
 
 ## 2.1
 
+Pour que notre application supporte une nouvelle langue, il suffit de copier le dossier qu'on aimerait traduire on lui rajoutant le suffixe -b+<acronyme de la langue supporté> puis de copier les fichiers nécéssitant une traduction dedans.
+Dans notre cas, nous avons créé un nouveau dossier values-b+fr, copié le fichier strings.xml (seul fichier nécéssitant à être traduit) puis traduit en français les textes.
+L'Intêret de séparer les textes du layout est de ne pas devoir recréer un layout où seul les textes change. Cela permet de factoriser le code et de le rendre plus léger.
+
+Si une traduction est manquante d'une langue additionnelle, elle est remplacé par la langue par défaut de l'app.
+Dans le cas d'une traduction manquante de la langue par défaut, le programme ne compile pas. Il est obligatoire de préciser les textes nécéssaire au layout dans la langue par défaut.
+
 ## 2.2
 
 Un inputType cohérent a été mis dans le layout de MainActivity pour chaque 
