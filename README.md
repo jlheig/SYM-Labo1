@@ -67,9 +67,9 @@ Pour la gestion des images matricielles comme du PNG, Il va les adapter au forma
 de son container en les étirant si les images sont trop grandes ou les compresser
 si elles sont trop petites. Ce la peut résulter en des images dont la qualité va
 dépendre de la taille des appareils où elles seront affichés. A l'opposé
-une image vectorielle est par définition parfaitement redimensionnable sans perdre sa qualité.
-Il n'est par contre pas possible des images vectorielles pour des types d'images 
-comme de photos pa exemple
+une image vectorielle est par définition parfaitement redimensionnable sans perdre de qualité.
+Il n'est par contre pas possible de produire des images vectorielles pour des types d'images 
+comme de photos par exemple
 
 ## 5.3
 
